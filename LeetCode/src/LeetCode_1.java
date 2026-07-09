@@ -1,2 +1,10 @@
-Add a new file called LeetCode_1
-now refresh setup in window
+// /* Question 1 --> Two Sum Problem */
+class Solution{
+    public int getTarget(){
+        return 0;
+    }
+}
+
+public class LeetCode_1 {
+    
+}
