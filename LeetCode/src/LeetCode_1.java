@@ -1,1 +1,5 @@
-Add a new file called LeetCode_1
+public class LeetCode_1{
+    public static void main(String[]args){
+        
+    }
+}
