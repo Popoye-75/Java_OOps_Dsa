@@ -1,4 +1,4 @@
-// import java.util.Stack;
+import java.util.Stack;
 // import java.util.Deque;
 // import java.util.ArrayDeque;
 
@@ -6,11 +6,16 @@ public class OnlyDsaStack_1 {
 
 
     // /* Question 10 ---> Min Stack */
-    static class Pair{
-
-    }
+    // static class Pair{
+    // }
 
     // /* Question 9 ---> Infix to postfix */
+    static String infixToPostfix(String exp){
+        Stack<Character> stack = new Stack<>();
+        
+
+        return "";
+    }
 
     // /* Question 8 ---> Evaluate Postfix */
     // static int evaluatePostfix(String exp) {
@@ -202,6 +207,10 @@ public class OnlyDsaStack_1 {
         // String exp = "234*+5-";
         // int result = evaluatePostfix(exp);
         // System.out.println("Result : " + result);
+
+        // /* Question 9 ---> Infix to Postfix */
+        String exp = "2+3*8-4/2*6+2";
+        System.out.println(infixToPostfix(exp));
 
     }
 }
