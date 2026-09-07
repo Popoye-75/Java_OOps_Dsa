@@ -1,4 +1,4 @@
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class TwoPointerAlgo {
 
@@ -127,7 +127,7 @@ public class TwoPointerAlgo {
     // }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // Scanner sc = new Scanner(System.in);
 
         // /* Question 1 ====> Pair sum to target <==== */
         // int[] arr = { 1, 2, 3, 4, 6, 7, 8, 9 }; // Create a sorted integer array
@@ -185,8 +185,9 @@ public class TwoPointerAlgo {
         // print the maximum water area
 
         // /* Question 7 ====> Three Sum problem */
-        int [] arr = {2,3,5,6,7,9};
-        System.out.println();
-        sc.close();
+        // int [] arr = {2,3,5,6,7,9};
+        // System.out.println();
+
+        // sc.close();
     }
 }
