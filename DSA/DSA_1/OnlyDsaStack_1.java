@@ -1,4 +1,4 @@
-import java.util.Stack;
+// import java.util.Stack;
 // import java.util.Deque;
 // import java.util.ArrayDeque;
 
@@ -11,9 +11,8 @@ public class OnlyDsaStack_1 {
 
     // /* Question 9 ---> Infix to postfix */
     static String infixToPostfix(String exp){
-        Stack<Character> stack = new Stack<>();
-        
-
+        // Stack<Character> stack = new Stack<>();
+    
         return "";
     }
 
