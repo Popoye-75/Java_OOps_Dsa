@@ -1,4 +1,3 @@
-package DSA_1;
 // import java.util.HashMap;
 
 public class JavaYtDsa_1 {

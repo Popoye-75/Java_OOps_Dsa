@@ -7,76 +7,98 @@
 // import java.util.PriorityQueue;
 
 // /* Question 5 -->  Music Playlist */
+class Playlist {
+    static class Node {
+        String data;
+        Node next = null;
+        Node prev = null;
 
+        Node(String data) {
+            this.data = data;
+        }
+    }
+
+    private Node head;
+
+    void addFrist(String data) {
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+    }
+}
 // /* Question 4 --> University student registry */
 // class Student implements Comparable<Student> {
-//     private String name;
-//     private int roll;
-//     Student(String name, int roll) {
-//         this.name = name;
-//         this.roll = roll;
-//     }
-//     public int getRoll() {
-//         return roll;
-//     }
-//     public String getName() {
-//         return name;
-//     }
-//     @Override
-//     public String toString(){
-//         return "Name --> " + name + " Roll --> "+ roll;
-//     }
-//     @Override
-//     public boolean equals(Object o) {
-//         if (this == o)
-//             return true;
-//         if (o == null || getClass() != o.getClass())
-//             return false;
-//         Student student = (Student) o;
-//         return this.roll == student.roll; // Agar roll String hai toh this.roll.equals(student.roll) use karein
-//     }
-//     @Override
-    // public int hashCode() {
-    //     return Integer.hashCode(roll); // Agar roll String hai toh Objects.hash(roll) use karein
-    // }
-    // @Override
-    // public int compareTo(Student s) {
-    //     int nameComparision = this.name.compareTo(s.name);
-    //     if (nameComparision != 0) {
-    //         return nameComparision;
-    //     }
-    //     return Integer.compare(this.roll, s.roll);
-    // }
+// private String name;
+// private int roll;
+// Student(String name, int roll) {
+// this.name = name;
+// this.roll = roll;
+// }
+// public int getRoll() {
+// return roll;
+// }
+// public String getName() {
+// return name;
+// }
+// @Override
+// public String toString(){
+// return "Name --> " + name + " Roll --> "+ roll;
+// }
+// @Override
+// public boolean equals(Object o) {
+// if (this == o)
+// return true;
+// if (o == null || getClass() != o.getClass())
+// return false;
+// Student student = (Student) o;
+// return this.roll == student.roll; // Agar roll String hai toh
+// this.roll.equals(student.roll) use karein
+// }
+// @Override
+// public int hashCode() {
+// return Integer.hashCode(roll); // Agar roll String hai toh Objects.hash(roll)
+// use karein
+// }
+// @Override
+// public int compareTo(Student s) {
+// int nameComparision = this.name.compareTo(s.name);
+// if (nameComparision != 0) {
+// return nameComparision;
+// }
+// return Integer.compare(this.roll, s.roll);
+// }
 // }
 // class University {
-//     private HashSet<Student> studentSet = new HashSet<>();
-//     private TreeSet<Student> studentAlpha = new TreeSet<>();
-//     private String universityName;
-//     private static University instance;
-//     private University(String university) {
-//         this.universityName = university;
-//     }
-//     public static University getInstance(String universityName) {
-//         if (instance == null) {
-//             instance = new University(universityName);
-//         }
-//         return instance;
-//     }
-//     public void addStudent(Student s) {
-//         if (s == null) {
-//             return;
-//         }
-//         studentSet.add(s);
-//         studentAlpha.add(s);
-//     }
-//     public String getUniversityName() {
-//         return universityName;
-//     }
-//     public void displayStudents() {
-//         for(Student std : studentAlpha){
-//             System.out.println(std.toString());
-//         }   
-//     }
+// private HashSet<Student> studentSet = new HashSet<>();
+// private TreeSet<Student> studentAlpha = new TreeSet<>();
+// private String universityName;
+// private static University instance;
+// private University(String university) {
+// this.universityName = university;
+// }
+// public static University getInstance(String universityName) {
+// if (instance == null) {
+// instance = new University(universityName);
+// }
+// return instance;
+// }
+// public void addStudent(Student s) {
+// if (s == null) {
+// return;
+// }
+// studentSet.add(s);
+// studentAlpha.add(s);
+// }
+// public String getUniversityName() {
+// return universityName;
+// }
+// public void displayStudents() {
+// for(Student std : studentAlpha){
+// System.out.println(std.toString());
+// }
+// }
 // }
 
 // /* Question 3 --> Food Delivery System */
@@ -293,7 +315,7 @@ public class oops_dsa_6 {
         // System.out.println(restro.getOrder("ORD101"));
         // System.out.println(restro.getOrder("ORD102"));
         // System.out.println(restro.getOrder("ORD999"));
- 
+
         // /* Question 4 --> University student registry */
         // University uni = University.getInstance("Tony");
         // System.out.println("University Name --> "+ uni.getUniversityName());
@@ -303,7 +325,7 @@ public class oops_dsa_6 {
         // Student s4 = new Student("Natasha", 70);
         // Student s5 = new Student("Rahul", 101);
         // Student s6 = new Student("Amit", 102);
-        // Student s7 = new Student("Rahul", 103); 
+        // Student s7 = new Student("Rahul", 103);
         // Student s8 = new Student("Priya", 104);
         // uni.addStudent(s1);
         // uni.addStudent(s2);
