@@ -184,10 +184,6 @@ public class TwoPointerAlgo {
         // System.out.println("Max Water ==> " + maxWater(arr)); // Call maxWater() and
         // print the maximum water area
 
-        // /* Question 7 ====> Three Sum problem */
-        // int [] arr = {2,3,5,6,7,9};
-        // System.out.println();
-
         // sc.close();
     }
 }

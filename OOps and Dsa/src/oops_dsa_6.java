@@ -20,12 +20,52 @@ class Playlist {
 
     private Node head;
 
-    void addFrist(String data) {
+    void addFirst(String data) {
         Node newNode = new Node(data);
-        if(head == null){
+        newNode.next = head;
+        if (head != null) {
+            head.prev = newNode;
+        }
+        head = newNode;
+    }
+
+    void addLast(String data) {
+        Node newNode = new Node(data);
+        if (head == null) {
             head = newNode;
             return;
         }
+        Node currNode = head;
+        while (currNode.next != null) {
+            currNode = currNode.next;
+        }
+        currNode.next = newNode;
+        newNode.prev = currNode;
+    }
+
+    void addAtIndex(String data, int idx) {
+        Node newNode = new Node(data);
+        if (idx < 1) {
+            System.out.println("Invalid index ...!");
+            return;
+        }
+        if (idx == 1) {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+            return;
+        }
+        if (head != null) {
+
+            int i = 1;
+            Node currNode = head;
+            while (currNode != null) {
+
+                i++;
+                currNode = currNode.next;
+            }
+        }
+        System.out.println("Index not found ...!");
     }
 }
 // /* Question 4 --> University student registry */
@@ -338,5 +378,9 @@ public class oops_dsa_6 {
         // System.out.println("Registered Student :-");
         // uni.displayStudents();
 
+        // /* Question 5 --> Music PlayList */
+        Playlist pl = new Playlist();
+        pl.addFirst("Sunraha hai na");
+        pl.addLast("Faded");
     }
 }
