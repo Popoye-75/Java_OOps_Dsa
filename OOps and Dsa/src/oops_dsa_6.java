@@ -8,19 +8,23 @@
 
 // /* Question 5 -->  Music Playlist */
 class Playlist {
-    static class Node {
+    private static class Node {
         String data;
-        Node next = null;
-        Node prev = null;
+        Node next;
+        Node prev;
 
         Node(String data) {
             this.data = data;
+            this.next = null;
+            this.prev = null;
         }
     }
 
     private Node head;
+    private Node tail;
+    private Node current;
 
-    void addFirst(String data) {
+    public void addFirst(String data) {
         Node newNode = new Node(data);
         newNode.next = head;
         if (head != null) {
@@ -29,7 +33,7 @@ class Playlist {
         head = newNode;
     }
 
-    void addLast(String data) {
+    public void addLast(String data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -43,31 +47,43 @@ class Playlist {
         newNode.prev = currNode;
     }
 
-    void addAtIndex(String data, int idx) {
+    public void addAtIndex(String data, int idx) {
         Node newNode = new Node(data);
         if (idx < 1) {
             System.out.println("Invalid index ...!");
             return;
         }
         if (idx == 1) {
-            newNode.next = head;
-            head.prev = newNode;
-            head = newNode;
+            addFirst(data);
             return;
         }
+        int i = 1;
         if (head != null) {
-
-            int i = 1;
             Node currNode = head;
-            while (currNode != null) {
-
+            while (currNode != null && i != idx - 1) {
                 i++;
                 currNode = currNode.next;
             }
+            if (currNode != null) {
+                newNode.next = currNode.next;
+                newNode.prev = currNode;
+                if (currNode.next != null) {
+                    currNode.next.prev = newNode;
+                }
+                currNode.next = newNode;
+                return;
+            }
+        }
+        if (idx > i) {
+            newNode = null;
+            System.out.println("Index out of Bound ..!");
+            return;
         }
         System.out.println("Index not found ...!");
     }
+
 }
+
 // /* Question 4 --> University student registry */
 // class Student implements Comparable<Student> {
 // private String name;
