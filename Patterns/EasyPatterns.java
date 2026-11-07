@@ -145,7 +145,13 @@ class Solution {
 
     //* Question 11 --> Stair Case pattern */
     public void stairCase(int n){
-        
+        for(int i = 1; i <= n; i++){
+            int k = (i % 2 != 0)? i+ 1: i;
+            for(int j = 0 ; j < k; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 
 }
@@ -153,15 +159,16 @@ class Solution {
 public class EasyPatterns {
     public static void main(String[] args) {
         Solution sol = new Solution();
-        sol.rightHalf(5); // Right half
-        sol.invertedRightHalf(5); // Inverted Right half
-        sol.invertedLeftHalf(5); // Inverted Left half
-        sol.leftHalf(5); // Left half
-        sol.fullPyramid(5); // Full pyramid || Triangle
-        sol.invertedFullPyramid(5); // Inverted Triangle pyramid
-        sol.halfDiamond(5); // Half diamond
-        sol.diamond(5); // Diamond
-        sol.alphabetA(5); // Alphabet 'A'
-        sol.solidAndHallowRect(5); // Solid and Hallow Rectangle
+        // sol.rightHalf(5); // Right half
+        // sol.invertedRightHalf(5); // Inverted Right half
+        // sol.invertedLeftHalf(5); // Inverted Left half
+        // sol.leftHalf(5); // Left half
+        // sol.fullPyramid(5); // Full pyramid || Triangle
+        // sol.invertedFullPyramid(5); // Inverted Triangle pyramid
+        // sol.halfDiamond(5); // Half diamond
+        // sol.diamond(5); // Diamond
+        // sol.alphabetA(5); // Alphabet 'A'
+        // sol.solidAndHallowRect(5); // Solid and Hallow Rectangle
+        sol.stairCase(6);
     }
 }

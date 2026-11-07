@@ -1,28 +1,49 @@
 public class OnlyDsaTwoPointer_8 {
 
-    // /* Question 4 ---> Merge Two Sorted array */
-    public static void mergeArray(int[] arr_1, int[] arr_2) {
-        int n = arr_1.length + arr_2.length;
-        int[] arr = new int[n];
-        int x = 0,y = 0,z = 0;
- 
-        while(z != n){
-            if(arr_1[x]< arr_2[y]){
-                arr[z] = arr_1[x];
-                // z++; 
-                x++;
-            }else if(arr_1[x]>arr_2[y]){
-                arr[z] = arr_2[y];
-                // z++;
-                y++;
+    // /* Question 5 ---> Remove duplicate from sorted Array */
+    public static int removeDuplicate(int[] arr) {
+        int i = 0;
+        int j = 1;
+        while (j < arr.length) {
+            if (arr[i] != arr[j]) {
+                arr[++i] = arr[j];
             }
-            z++;
+            j++;
+        }
+        return i + 1;
+    }
+
+    // /* Question 4 ---> Merge Two Sorted array (And return new array)*/
+    public static int[] mergeArray(int[] arr_1, int[] arr_2) {
+        int n = arr_1.length;
+        int m = arr_2.length;
+        int[] arr = new int[n + m];
+        int i = 0, j = 0, k = 0;
+
+        while (i < n && j < m) {
+            if (arr_1[i] <= arr_2[j]) {
+                arr[k] = arr_1[i];
+                k++;
+                i++;
+            } else {
+                arr[k] = arr_2[j];
+                k++;
+                j++;
+            }
         }
 
-        for(int i : arr){
-            System.out.print(i + " ");
+        while (i < n) {
+            arr[k] = arr_1[i];
+            k++;
+            i++;
         }
-        System.out.println();
+        while (j < m) {
+            arr[k] = arr_2[j];
+            k++;
+            j++;
+        }
+
+        return arr;
     }
 
     // /* Question 3 ---> String is Palindrome */
@@ -98,9 +119,20 @@ public class OnlyDsaTwoPointer_8 {
         // System.out.println("String is Palindrome : "+ isPalindrome(str));
 
         // /* Question 4 ---> Merge Two Sorted array */
-        int[] arr_1 = { 1, 3, 5, 7 };
-        int[] arr_2 = { 2, 4, 6, 8 };
-        mergeArray(arr_1, arr_2);
+        // int[] arr_1 = { 1, 3, 5, 7 };
+        // int[] arr_2 = { 2, 4, 6, 8 };
+        // int[] result = mergeArray(arr_1, arr_2);
+        // for (int k : result) {
+        // System.out.print(k + " ");
+        // }
+        // System.out.println();
 
+        // /* Question 5 ---> Remove Duplicates from sorted Array */
+        // int[] arr = { 1, 2, 2, 3, 3, 4, 5, 6 };
+        // int n = removeDuplicate(arr);
+        // for(int i = 0; i < n; i++){
+        //     System.out.print(arr[i]+" ");
+        // }
+        // System.out.println();
     }
 }
