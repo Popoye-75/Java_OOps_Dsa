@@ -1,4 +1,12 @@
 public class OnlyDsaRecursion_6 {
+     // /* Question 5 --> Find all the subsets of given array */
+     static void subsets(int [] arr,int x){
+        if(x < 0){
+            return;
+        }
+        System.out.println(arr[x]);
+        subsets(arr, --x);
+     }
 
         // /* Question 4 --> Calculate the power of given base */
         static int power(int base,int exp){
@@ -9,7 +17,7 @@ public class OnlyDsaRecursion_6 {
             }
             return base * power(base, --exp);
         }
-
+ 
     // /* Question 3 --> Reverse the string */
     static String reverseStr(String str, int i) {
         if(i < 0){
@@ -54,5 +62,9 @@ public class OnlyDsaRecursion_6 {
         // /* Question 4 --> Calculate the power of given base */
         // int result = power(2, 8);
         // System.out.println("Power of base : " + result);
+
+        // /* Question 5 --> Find all the subsets of given array */
+        int [] arr = {1,2,3,4,5,6};
+        subsets(arr, arr.length-1);
     }
 }
